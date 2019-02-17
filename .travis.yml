@@ -1,0 +1,10 @@
+language: node_js
+branches:
+  only:
+  - master
+
+jobs:
+  include:
+  - stage: "Build"
+    script: "npm install"
+    script: "npm run build"
