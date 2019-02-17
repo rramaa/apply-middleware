@@ -1,0 +1,31 @@
+{
+  "name": "create-middleware",
+  "version": "1.0.0",
+  "description": "A small package to implement middleware pattern",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:rramaa/create-middleware.git"
+  },
+  "keywords": [
+    "middleware",
+    "express-middleware",
+    "middleware-pattern"
+  ],
+  "author": "Ramakrishna",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rramaa/apply-middleware/issues"
+  },
+  "homepage": "https://github.com/rramaa/apply-middleware#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^3.3.3"
+  }
+}
