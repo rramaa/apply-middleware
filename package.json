@@ -38,7 +38,7 @@
           "package-lock.json",
           "CHANGELOG.md"
         ],
-        "message": "Release: ${nextRelease.version}\n\n${nextRelease.notes}"
+        "message": "[ci skip]Release: ${nextRelease.version}\n\n${nextRelease.notes}"
       }
     ],
     "plugins": [
