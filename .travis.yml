@@ -1,10 +1,22 @@
 language: node_js
+node_js:
+  - "8.9.0"
+
+deploy:
+  skip_cleanup: true
+
 branches:
   only:
   - master
 
 jobs:
   include:
-  - stage: "Build"
+  - stage: "install"
     script: "npm install"
+  - stage: "build"
     script: "npm run build"
+  - stage: "test"
+    script: "npm run test"
+  - stage: "deploy"
+    script: "ls"
+    script: "echo $NPM_TOKEN"

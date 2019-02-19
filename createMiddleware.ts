@@ -1,17 +1,18 @@
+type fn = (...args: any[]) => any
 type cbMasterListObjectType =  {
-	callback: Function,
+	callback: fn,
 	global?: boolean,
 	event?: string
 }
 
 interface initMiddlewaresReturn {
-	registerMiddleware: (event: string | Function, ...args: any) => void,
+	registerMiddleware: (event: string | fn, ...args: any) => void,
 	executeMiddleware: (event: string, ...args: any) => void
 }
 
 export function initMiddlewares(): initMiddlewaresReturn {
 	let cbMasterList : cbMasterListObjectType[] = []
-	function register(event: string | Function, ...callbacks: Function[]) {
+	function register(event: string | fn, ...callbacks: fn[]) {
 		if(typeof event == 'function') {
 			cbMasterList.push(...[event, ...callbacks].map(v => ({
 				callback: v,
@@ -26,7 +27,7 @@ export function initMiddlewares(): initMiddlewaresReturn {
 		}
 	}
 
-	function execute(event: string, ...args: any) {
+	async function execute(event: string, ...args: any) {
 		const cbQueue = cbMasterList.filter(v => v.global || v.event === event).map(v => v.callback)
 		if(!cbQueue.length) {
 			return
@@ -38,7 +39,7 @@ export function initMiddlewares(): initMiddlewaresReturn {
 				await cb(...args, next)
 			}
 		}
-		cbQueue[currentState](...args, next)
+		await cbQueue[currentState](...args, next)
 	}
 
 	return {
