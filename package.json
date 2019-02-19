@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 0",
     "start": "tsc --watch",
     "build": "tsc",
-    "preversion": "npm run build",
+    "prepublishOnly": "npm run build",
     "semantic-release": "semantic-release"
   },
   "files": [
