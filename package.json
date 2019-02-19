@@ -42,7 +42,6 @@
         "message": "[ci skip]Release: ${nextRelease.version}\n\n${nextRelease.notes}"
       }
     ],
-    
     "plugins": [
       [
         "@semantic-release/commit-analyzer",
