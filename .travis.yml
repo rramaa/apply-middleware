@@ -2,9 +2,6 @@ language: node_js
 node_js:
   - "8.9.0"
 
-deploy:
-  skip_cleanup: true
-
 branches:
   only:
   - master
@@ -17,6 +14,9 @@ jobs:
     script: "npm run build"
   - stage: "test"
     script: "npm run test"
-  - stage: "deploy"
-    script: "ls"
-    script: "echo $NPM_TOKEN"
+  - stage: "release"
+    script: skip
+    deploy:
+      provider: script
+      skip_cleanup: true
+      script: npm run semantic-release
