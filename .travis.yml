@@ -8,15 +8,13 @@ branches:
 
 jobs:
   include:
-  - stage: "install"
-    script: "npm install"
   - stage: "build"
     script: "npm run build"
-  - stage: "test"
-    script: "npm run test"
+  # - stage: "test"
+  #   script: "npm run test"
   - stage: "release"
     script: skip
     deploy:
       provider: script
       skip_cleanup: true
-      script: npm run semantic-release
+      script: ls && npm run semantic-release
