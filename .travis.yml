@@ -8,6 +8,7 @@ branches:
 
 stages:
   - "build"
+  - "test"
   - name: "release"
     if: branch = master
 
@@ -15,8 +16,8 @@ jobs:
   include:
   - stage: "build"
     script: "npm run build"
-  # - stage: "test"
-  #   script: "npm run test"
+  - stage: "test"
+    script: "npm run test"
   - stage: "release"
     script: skip
     deploy:
