@@ -17,6 +17,7 @@ jobs:
   - stage: "build"
     script: "npm run build"
   - stage: "test"
+    skip_cleanup: true
     script: "npm run test"
   - stage: "release"
     script: skip
