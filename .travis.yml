@@ -6,6 +6,11 @@ branches:
   only:
   - master
 
+stages:
+  - "build"
+  - name: "release"
+    if: branch = master
+
 jobs:
   include:
   - stage: "build"
