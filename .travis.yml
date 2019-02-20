@@ -14,7 +14,7 @@ stages:
 jobs:
   include:
   - stage: "test"
-    script: "npm run build && npm run test"
+    script: "npm run build && npm run test && npm run publish-coverage-report"
   - stage: "release"
     script: skip
     deploy:

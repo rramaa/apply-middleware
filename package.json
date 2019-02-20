@@ -5,6 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "jest",
+    "publish-coverage-report": "codecov",
     "start": "tsc --watch",
     "build": "tsc",
     "prepublishOnly": "npm run build",
