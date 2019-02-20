@@ -1,4 +1,5 @@
-# create-middleware [![Build Status](https://travis-ci.org/rramaa/create-middleware.svg?branch=master)](https://travis-ci.org/rramaa/create-middleware) [![npm version](https://img.shields.io/npm/v/create-middleware.svg)](https://www.npmjs.com/package/create-middleware)
+# create-middleware [![Build Status](https://travis-ci.org/rramaa/create-middleware.svg?branch=master)](https://travis-ci.org/rramaa/create-middleware) [![npm version](https://img.shields.io/npm/v/create-middleware.svg)](https://www.npmjs.com/package/create-middleware) [![codecov](https://codecov.io/gh/rramaa/create-middleware/branch/master/graph/badge.svg)](https://codecov.io/gh/rramaa/create-middleware)
+
 
 A small package to implement middleware pattern. This package implements the middleware pattern similar to how express does. You can register global middlewares or event specific middlewares. Refer to [Usage Guide](https://github.com/rramaa/create-middleware#usage-guide) for information on how to use.
 

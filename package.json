@@ -4,7 +4,8 @@
   "description": "A small package to implement middleware pattern",
   "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0",
+    "test": "jest",
+    "publish-coverage-report": "codecov",
     "start": "tsc --watch",
     "build": "tsc",
     "prepublishOnly": "npm run build",
@@ -55,14 +56,31 @@
       "@semantic-release/changelog"
     ]
   },
-  "dependencies": {
-    "@types/node": "^11.9.4"
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "transform": {
+      ".ts": "babel-jest"
+    },
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true
   },
+  "dependencies": {},
   "devDependencies": {
-    "typescript": "^3.3.3",
+    "@babel/core": "^7.3.3",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-typescript": "^7.3.3",
     "@semantic-release/changelog": "^3.0.1",
     "@semantic-release/git": "^7.0.5",
+    "@types/jest": "^24.0.6",
+    "@types/node": "^11.9.4",
+    "babel-jest": "^24.1.0",
+    "codecov": "^3.2.0",
+    "conventional-changelog-eslint": "^3.0.0",
+    "jest": "^24.1.0",
     "semantic-release": "^15.13.3",
-    "conventional-changelog-eslint": "^3.0.0"
+    "typescript": "^3.3.3"
   }
 }

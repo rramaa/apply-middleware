@@ -7,16 +7,14 @@ branches:
   - master
 
 stages:
-  - "build"
+  - "test"
   - name: "release"
     if: branch = master
 
 jobs:
   include:
-  - stage: "build"
-    script: "npm run build"
-  # - stage: "test"
-  #   script: "npm run test"
+  - stage: "test"
+    script: "npm run build && npm run test && npm run publish-coverage-report"
   - stage: "release"
     script: skip
     deploy:
