@@ -59,6 +59,7 @@
   },
   "exclude": [
     "lib",
-    "__tests__"
+    "__tests__",
+    "coverage"
   ]
 }
