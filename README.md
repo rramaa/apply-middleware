@@ -34,7 +34,7 @@ async function loggingMiddleware(someObj, next){
 }
 
 async function errorHandlerMiddleware(someObj, next){
-    try{
+    try {
         await next()
     } catch(e) {
         // handle error here
