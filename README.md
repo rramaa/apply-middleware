@@ -43,4 +43,4 @@ async function errorHandlerMiddleware(someObj, next){
 ```
 Typically error handler middleware would registered at the beginning globally for it to catch all errors propagating from the middlewares.
 
-Note: All middlewares should be async functions and every next call should be awaited for this feature to work correctly
+PS: All middlewares should be async functions and every next call should be awaited for this feature to work correctly
